@@ -79,6 +79,12 @@ rug = "1.28"                     # pulls correct gmp-mpfr-sys automatically
 version = "1.6"                  # same version rug uses
 features = ["use-system-libs"]   # tells it *not* to compile from source
 ```
+or if you only want gmp-mpfr-sys
+
+```toml
+[dependencies]
+gmp-mpfr-sys = { version = "1.6", features = ["use-system-libs"] }   
+```
 
 ---
 
@@ -114,28 +120,3 @@ cargo build
 - Or check file permissions in the MSYS2 installation directory
 
 ---
-
-## Verification
-
-Test that everything works by creating a simple test program:
-
-```rust
-use rug::Integer;
-
-fn main() {
-    let a = Integer::from(123);
-    let b = Integer::from(456);
-    let result = a * b;
-    println!("123 * 456 = {}", result);
-}
-```
-
-Run with:
-```powershell
-cargo run
-```
-
-Expected output:
-```
-123 * 456 = 56088
-```
