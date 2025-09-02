@@ -55,7 +55,7 @@ rustup default stable-x86_64-pc-windows-gnu
 
 **Pick one method:**
 
-### One-time (current shell only):
+### One-time (shell you are gona run cargo build):
 ```powershell
 $Env:PATH += ";C:\msys64\mingw64\bin"
 ```
